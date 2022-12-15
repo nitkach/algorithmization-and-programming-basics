@@ -1,13 +1,31 @@
 def input_words():
-    print("1. Words input.")
+    print("\n1. Words input.")
+    return input().split()
 
     
 def sort_words(words):
-    print("2. Words sort.")
+    '''
+    Sorts list of words alphabetically
+    '''
+    print(f"\n2. Words sort.\n{words} -> ", end='')
+    
+    n = len(words)
+
+    # bubble sort
+    for i in range(n):
+        for j in range(i + 1, n):
+            if words[i] > words[j]:
+                word = words[i]
+                words[i] = words[j]
+                words[j] = word
+    print(words)
+
+    return words
 
 
 def print_words(words):
-    print("3. Words output.")
+    print("\n3. Words output.")
+    print(*words)
 
 
 def main():
